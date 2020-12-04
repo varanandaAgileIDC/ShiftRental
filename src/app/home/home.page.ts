@@ -34,6 +34,9 @@ export class HomePage {
 
   ionViewDidEnter(){
 
+    debugger;
+
+    this.loginForm.reset();
     
     this.platform.backButton.subscribeWithPriority(10, () => {
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Platform } from '@ionic/angular';
 
@@ -9,11 +10,31 @@ import { Platform } from '@ionic/angular';
 })
 export class PasswordPage implements OnInit {
 
+  check = false;
+  submitted = false;
+  passwordForm:FormGroup;
+
   constructor(private router:Router,
-    private platform:Platform) { }
+    private platform:Platform,private formBuilder:FormBuilder) { }
 
   ngOnInit() {
+
+    this.passwordForm = this.formBuilder.group({
+
+      password:['', Validators.required]
+
+    });
+
   }
+
+
+  get f()
+  {
+
+    return this.passwordForm.controls;
+
+  }
+  
 
   ionViewDidEnter(){
   
@@ -33,9 +54,45 @@ export class PasswordPage implements OnInit {
     });
     
   }
+  
 
+  onSubmit()
+  {
 
-  register()
+    this.submitted = true;
+
+    if(this.passwordForm.invalid)
+    {
+      return;
+    }
+    else
+    {
+
+      if(this.check)
+      {
+
+      this.register(this.passwordForm.value)
+
+    }
+    else
+    {
+
+      alert('Please aggree terms and conditions');
+
+    }
+
+    }
+
+  }
+
+  select(event)
+  {
+
+    this.check = event.currentTarget.checked;
+
+  }
+
+  register(formData)
   {
 
     this.router.navigate(['dashboard']);
