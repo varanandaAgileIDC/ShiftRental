@@ -1,5 +1,7 @@
 {
   "name": "shiftRental",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
