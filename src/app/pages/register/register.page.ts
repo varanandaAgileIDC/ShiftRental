@@ -19,8 +19,17 @@ export class RegisterPage implements OnInit {
 
     this.platform.backButton.subscribe(() => {
 
+      if(this.router['routerState'].snapshot.url == '/dashboard')
+      {
+
+      }
+      else
+      {
+
       debugger;
       this.router.navigate(['home']);
+      
+      }
 
     });
 

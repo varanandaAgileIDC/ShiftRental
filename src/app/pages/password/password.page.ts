@@ -20,9 +20,15 @@ export class PasswordPage implements OnInit {
     this.platform.backButton.subscribe(() => {
       debugger;
 
-      
+      if(this.router['routerState'].snapshot.url == '/dashboard')
+      {
+
+      }
+      else
+      {
 
       this.router.navigate(['register']);
+      }
 
     });
     
