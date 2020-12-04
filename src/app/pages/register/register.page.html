@@ -28,44 +28,66 @@
                       <h1>Shift Rental</h1>
                   </ion-col>
               </ion-row>
+              <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
               <ion-row>
                   <ion-col>
                       <ion-list>
   
                           <ion-item>
                               <ion-icon name="person" class="icon-login"></ion-icon>
-                              <ion-input type="text" required placeholder="First Name"></ion-input>
+                              <ion-input type="text" formControlName="firstName" required placeholder="First Name"></ion-input>
                           </ion-item>
-                          
+                          <div *ngIf="submitted && f.firstName.errors" class="invalid-error">
+                            <div *ngIf="f.firstName.errors.required">Firstname is required</div>
+                          </div>
                           <ion-item>
                               <ion-icon name="person" class="icon-login"></ion-icon>
-                              <ion-input type="text" required placeholder="Laste Name"></ion-input>
+                              <ion-input type="text" formControlName="lastName" required placeholder="Laste Name"></ion-input>
                           </ion-item>
+
+                          <div *ngIf="submitted && f.lastName.errors" class="invalid-error">
+                            <div *ngIf="f.lastName.errors.required">Lastname is required</div>
+                          </div>
 
                           <ion-item>
                             <ion-icon name="mail" class="icon-login"></ion-icon>
-                            <ion-input type="email" required placeholder="Email Address"></ion-input>
+                            <ion-input type="email" formControlName="email" required placeholder="Email Address"></ion-input>
                         </ion-item>
+
+                        <div *ngIf="submitted && f.email.errors" class="invalid-error">
+                          <div *ngIf="f.email.errors.required">Email is required</div>
+                          <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                      </div>
     
                         <ion-item>
                             <ion-icon name="phone-portrait" class="icon-login"></ion-icon>
-                            <ion-input  type="tel" required placeholder="Mobile Number"></ion-input>
+                            <ion-input  type="tel" formControlName="mobile" required placeholder="Mobile Number"></ion-input>
                         </ion-item>
+                        <div *ngIf="submitted && f.mobile.errors" class="invalid-error">
+                          <div *ngIf="f.mobile.errors.required">Mobile number is required</div>
+                          <div *ngIf="f.mobile.errors.pattern">Mobile number must contain 10 digits, without letter & special character</div>
+                      </div>
                         <ion-item>
                           <ion-icon name="globe" class="icon-login"></ion-icon>
-                          <ion-input type="text" required placeholder="Nationality"></ion-input>
+                          <ion-input type="text" formControlName="nationality" required placeholder="Nationality"></ion-input>
                       </ion-item>
   
+                      <div *ngIf="submitted && f.nationality.errors" class="invalid-error">
+                        <div *ngIf="f.nationality.errors.required">Nationality is required</div>
+                      </div>
+
+
                       </ion-list>
                   </ion-col>
               </ion-row>
               <ion-row>
                   <ion-col>
-                      <ion-button type="submit" fill="solid" expand="full" (click)="register()">
+                      <ion-button type="submit" fill="solid" expand="full">
                           Register
                       </ion-button>
                   </ion-col>
               </ion-row>
+            </form>
           </ion-grid>
       </div>
   </ion-slide>

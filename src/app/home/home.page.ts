@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Platform } from '@ionic/angular';
 import { ServiceService } from '../api/service.service';
@@ -14,13 +15,26 @@ export class HomePage {
   status = false;
   loginDetails = {email:'',password:''}
 
+  loginForm: FormGroup;
+  submitted = false;
+
   constructor(private router:Router,
     private api:ServiceService,
-    private platform:Platform
-    ) {}
+    private platform:Platform,
+    private formBuilder:FormBuilder
+    ) {
+
+      this.loginForm = this.formBuilder.group({
+        username: ['', Validators.required],
+        password: ['', Validators.required],
+      });
+  
+
+    }
 
   ionViewDidEnter(){
 
+    
     this.platform.backButton.subscribeWithPriority(10, () => {
 
       debugger
@@ -47,9 +61,24 @@ export class HomePage {
   }
 
 
-  login()
+  get f() { return this.loginForm.controls; }
+
+  onSubmit() {
+    this.submitted = true;
+    if (this.loginForm.invalid) {
+        return;
+    }else {
+      console.log(this.loginForm.value);
+      this.login(this.loginForm.value);
+     
+    } 
+}
+
+  login(formData)
   {
 
+    this.status = false;
+    this.router.navigate(['dashboard']);
 
   }
 

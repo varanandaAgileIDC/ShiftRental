@@ -28,33 +28,40 @@
                       <h1>Shift Rental</h1>
                   </ion-col>
               </ion-row>
+              <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
               <ion-row>
                   <ion-col>
                       <ion-list>
   
                           <ion-item>
                               <ion-icon name="person" class="icon-login"></ion-icon>
-                              <ion-input name="user" type="text" required placeholder="User Name"></ion-input>
+                              <ion-input name="user" formControlName="username" type="text" placeholder="User Name"></ion-input>
                           </ion-item>
+                          <div *ngIf="submitted && f.username.errors" class="invalid-error">
+                            <div *ngIf="f.username.errors.required">Email is required</div>
+                          </div>
                           <br />
                           <ion-item>
                               <ion-icon name="lock-closed" class="icon-login"></ion-icon>
-                              <ion-input name="password" type="password" required placeholder="Password"></ion-input>
+                              <ion-input name="password" formControlName="password" type="password" placeholder="Password"></ion-input>
                           </ion-item>
-  
+                          <div *ngIf="submitted && f.password.errors" class="invalid-error">
+                            <div *ngIf="f.password.errors.required">Password is required</div>
+                        </div>
                       </ion-list>
                   </ion-col>
               </ion-row>
               <ion-row>
                   <ion-col>
-                      <ion-button type="submit" fill="solid" expand="full" (click)="login()">
+                      <ion-button type="submit" fill="solid" expand="full">
                           Login
                       </ion-button>
                   </ion-col>
               </ion-row>
+            </form>
               <ion-row>
-                  <ion-col>
-                      <ion-label (click)="createAccount()">
+                  <ion-col (click)="createAccount()">
+                      <ion-label>
                           <h3 style=" color: green;">Create an account</h3>
                       </ion-label>
                   </ion-col>
