@@ -23,6 +23,10 @@ const routes: Routes = [
     path: 'dashboard',
     loadChildren: () => import('./pages/dashboard/dashboard.module').then( m => m.DashboardPageModule)
   },
+  {
+    path: 'cars',
+    loadChildren: () => import('./pages/cars/cars.module').then( m => m.CarsPageModule)
+  },
 ];
 
 @NgModule({

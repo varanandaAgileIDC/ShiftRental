@@ -6,4 +6,160 @@
 
 <ion-content>
 
+  <ion-slides *ngIf="segmentValue=='Rent a Car'" #mySlider #changeSlider (ionSlidesDidLoad)="slidesDidLoad(mySlider)"
+    (ionSlideDidChange)="slideDidChange(changeSlider)" pager="true" autoplay="5000" loop="true" speed="300"
+    [options]="slidesOpts" class="banner">
+
+    <ion-slide *ngFor="let slide of slideItems">
+      <div class="bannerDiv">
+        <img [src]="slide.image" class="bannerImage">
+      </div>
+    </ion-slide>
+
+
+  </ion-slides>
+  <ion-grid style="width: 95%;">
+    <!-- <ion-row style="border: 2px solid #f4c800;color: #f4c800;">
+      <ion-col size="6" style="text-align: center;border-right: 1px solid gray;">
+<b>Rent a Car</b>
+      </ion-col>
+      <ion-col size="6" style="text-align: center;">
+<b>Lease a car</b>
+      </ion-col>
+    </ion-row> -->
+
+
+    <ion-segment value="Rent a Car" style="border: 2px solid #f4c800;color: #f4c800;" (ionChange)="segmentChanged($event)">
+      <ion-segment-button value="Rent a Car" style="border-right: 1px solid gray;">
+        <ion-label>Rent a Car</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="Lease a car">
+        <ion-label>Lease a car</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+
+  </ion-grid>
+  
+  <ion-grid *ngIf="segmentValue=='Rent a Car'" style="background: #e8e8e8;width: 92%;margin-top: -5px;border-bottom-left-radius: 10px;border-bottom-left-radius: 10px;">
+    <ion-row>
+      <ion-col size="12" style="border-bottom: 1px solid lightgray;">
+<p style="size: 8px;text-align: center;margin-top: -8px;">Rent a Car From Hours to Couple of Months and Experience hassle free driving.just Enjoy your driving,
+leave maintenance on us</p>
+      </ion-col>
+    </ion-row>
+    <ion-radio-group (ionChange)="radioAction($event)">
+      <ion-row>
+        <ion-col size="4">
+             <ion-item style="--background: #e8e8e8;text-align: end;" lines="none">
+                <ion-label style="font-size: 12px;">Day</ion-label>
+                <ion-radio mode="md" item-left value="Day"></ion-radio>
+           </ion-item>
+         </ion-col>
+    
+        <ion-col size="4">
+            <ion-item style="--background: #e8e8e8;text-align: end;" lines="none">
+                <ion-label style="font-size: 12px;">Weekly</ion-label>
+                <ion-radio mode="md" item-left value="Weekly"></ion-radio>
+           </ion-item>
+        </ion-col>
+    
+        <ion-col size="4">
+            <ion-item style="--background: #e8e8e8;text-align: end;" lines="none">
+                <ion-label style="font-size: 12px;">Monthly</ion-label>
+                <ion-radio mode="md" item-left value="Monthly"></ion-radio>
+           </ion-item>
+        </ion-col>
+    
+    </ion-row>
+    </ion-radio-group>
+
+    <ion-row>
+      <ion-col style="text-align: center;" size="4">
+<p>Start Date</p>
+      </ion-col>
+
+      <ion-col size="8">
+        <ion-item>
+          <ion-icon name="calendar-outline"></ion-icon>
+          <ion-datetime (ionChange)="startAction($event)" displayFormat="MM/DD/YYYY" min="1994-03-14" max="2100-12-09" placeholder="mm/dd/yyyy"></ion-datetime>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col style="text-align: center;" size="4">
+<p>Return Date</p>
+      </ion-col>
+
+      <ion-col size="8">
+        <ion-item>
+          <ion-icon name="calendar-outline"></ion-icon>
+          <ion-datetime (ionChange)="returnAction($event)" displayFormat="MM/DD/YYYY" min="1994-03-14" max="2100-12-09" placeholder="mm/dd/yyyy"></ion-datetime>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col style="text-align: end;">
+
+        <ion-button style="--background: #e1281c;text-transform: none;" (click)="search()"> Search </ion-button>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+
+
+
+  
+
+
+  <ion-grid *ngIf="segmentValue=='Lease a car'" style="background: #e8e8e8;width: 92%;margin-top: -5px;border-bottom-left-radius: 10px;border-bottom-left-radius: 10px;height: 80%;">
+    <ion-row>
+      <ion-col size="12" style="border-bottom: 1px solid lightgray;">
+<p style="size: 8px;text-align: center;margin-top: -8px;">Lease a car starting from 3 Months to Years and 
+bring in significant cost saving & reduced administrative hassles</p>
+      </ion-col>
+    </ion-row>
+   
+    <ion-row>
+      <ion-col style="text-align: center;" size="4">
+<p>Start Date</p>
+      </ion-col>
+
+      <ion-col size="8">
+        <ion-item>
+          <ion-icon name="calendar-outline"></ion-icon>
+          <ion-datetime (ionChange)="leaseStartAction($event)" displayFormat="MM/DD/YYYY" min="1994-03-14" max="2100-12-09" placeholder="mm/dd/yyyy"></ion-datetime>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col style="text-align: center;" size="4">
+<p>Duration in Months</p>
+      </ion-col>
+
+      <ion-col size="8">
+        <ion-item style="--background: #e8e8e8;" lines="none">
+          <ion-range min="1" max="12" pin="true" snaps="true" color="dark" (ionChange)="rangeAction($event)">
+
+            <ion-label slot="start">1</ion-label>
+            <ion-label slot="end">12</ion-label>
+
+          </ion-range>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col style="text-align: end;">
+
+        <ion-button style="--background: #e1281c;text-transform: none;"> Enquire Now </ion-button>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
 </ion-content>

@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Cars</ion-title>
+  </ion-toolbar>
+
+  <ion-grid>
+    <ion-row style="text-align: center;">
+      <ion-col style="border-right: 1px solid lightgray;">
+        <ion-icon name="funnel-outline"></ion-icon> <span> Sort By </span>
+      </ion-col>
+      <ion-col>
+        <ion-icon name="filter"></ion-icon> <span> Filter </span>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-header>
+
+<ion-content>
+
+<ion-list>
+
+  <ion-card *ngFor="let car of carsArray">
+    <ion-item lines="none" detail>
+      <img [src]="car.image" style="width: 140px;height: 140px;"><br>
+      <ion-label>
+       <b><p style="background: #d7151b;color: white;text-align: center;border-radius: 5px;"> {{car.name}} </p></b> 
+        <p class="detail"> Minimum age {{car.age}} Years </p>
+       <p class="detail"><ion-icon name="car"></ion-icon> {{car.fuelType}} </p>
+       <p class="detail"><ion-icon name="person"></ion-icon> Sitting Capacity : {{car.capacity}} </p>
+       <p class="detail"> <ion-icon name="briefcase"></ion-icon> Heavy Luggage : {{car.heavyLug}} </p>
+       <p class="detail"> <ion-icon name="briefcase"></ion-icon> Light Luggage : {{car.lightLug}} </p>
+       <p class="detail"><ion-icon name="eyedrop"></ion-icon> {{car.transmission}} </p>
+      </ion-label>
+      
+    </ion-item>
+
+
+    <ion-row style="border: 1px solid lightgray;">
+      <ion-col style="border-right: 1px solid lightgray;">
+       <b> Daily </b><br>
+     <b> <span style="font-size: 10px;color: black;"><span style="text-decoration-line: line-through;color: gray;"> AED 125</span> &nbsp;&nbsp; AED {{car.daily}} </span> </b>
+      </ion-col>
+      <ion-col style="border-right: 1px solid lightgray;">
+        <b> Weekly </b><br>
+        <b><span style="font-size: 10px;color: black;"><span style="text-decoration-line: line-through;color: gray;"> AED 125</span> &nbsp;&nbsp; AED {{car.weekly}} </span> </b>
+     </ion-col>
+     <ion-col>
+      <b> Monthly </b><br>
+      <b> <span style="font-size: 10px;color: black;"><span style="text-decoration-line: line-through;color: gray;"> AED 125</span> &nbsp;&nbsp; AED {{car.monthly}} </span> </b>
+     </ion-col>
+    </ion-row>
+
+  </ion-card>
+
+</ion-list>
+
+</ion-content>
