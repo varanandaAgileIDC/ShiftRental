@@ -18,10 +18,10 @@
 
 
   </ion-slides>
-  <ion-grid style="width: 95%;">
+  <ion-grid class="segmentGrid">
 
-    <ion-segment value="Rent a Car" style="border: 2px solid #f4c800;color: #f4c800;" (ionChange)="segmentChanged($event)">
-      <ion-segment-button value="Rent a Car" style="border-right: 1px solid gray;">
+    <ion-segment value="Rent a Car" class="segment" (ionChange)="segmentChanged($event)">
+      <ion-segment-button value="Rent a Car" class="segmentBtn">
         <ion-label>Rent a Car</ion-label>
       </ion-segment-button>
       <ion-segment-button value="Lease a car">
@@ -31,32 +31,32 @@
 
   </ion-grid>
   
-  <ion-grid *ngIf="segmentValue=='Rent a Car'" style="background: #e8e8e8;width: 92%;margin-top: -5px;border-bottom-left-radius: 10px;border-bottom-left-radius: 10px;">
+  <ion-grid *ngIf="segmentValue=='Rent a Car'" class="rentGrid">
     <ion-row>
-      <ion-col size="12" style="border-bottom: 1px solid lightgray;">
-<p style="size: 8px;text-align: center;margin-top: -8px;">Rent a Car From Hours to Couple of Months and Experience hassle free driving.just Enjoy your driving,
+      <ion-col size="12" class="rentCol">
+<p>Rent a Car From Hours to Couple of Months and Experience hassle free driving.just Enjoy your driving,
 leave maintenance on us</p>
       </ion-col>
     </ion-row>
     <ion-radio-group (ionChange)="radioAction($event)">
       <ion-row>
         <ion-col size="4">
-             <ion-item style="--background: #e8e8e8;text-align: end;" lines="none">
-                <ion-label style="font-size: 12px;">Day</ion-label>
+             <ion-item class="radioItem" lines="none">
+                <ion-label>Day</ion-label>
                 <ion-radio mode="md" item-left value="Day"></ion-radio>
            </ion-item>
          </ion-col>
     
         <ion-col size="4">
-            <ion-item style="--background: #e8e8e8;text-align: end;" lines="none">
-                <ion-label style="font-size: 12px;">Weekly</ion-label>
+            <ion-item class="radioItem" lines="none">
+                <ion-label>Weekly</ion-label>
                 <ion-radio mode="md" item-left value="Weekly"></ion-radio>
            </ion-item>
         </ion-col>
     
         <ion-col size="4">
-            <ion-item style="--background: #e8e8e8;text-align: end;" lines="none">
-                <ion-label style="font-size: 12px;">Monthly</ion-label>
+            <ion-item class="radioItem" lines="none">
+                <ion-label>Monthly</ion-label>
                 <ion-radio mode="md" item-left value="Monthly"></ion-radio>
            </ion-item>
         </ion-col>
@@ -65,7 +65,7 @@ leave maintenance on us</p>
     </ion-radio-group>
 
     <ion-row>
-      <ion-col style="text-align: center;" size="4">
+      <ion-col class="dateCol" size="4">
 <p>Start Date</p>
       </ion-col>
 
@@ -78,7 +78,7 @@ leave maintenance on us</p>
     </ion-row>
 
     <ion-row>
-      <ion-col style="text-align: center;" size="4">
+      <ion-col class="dateCol" size="4">
 <p>Return Date</p>
       </ion-col>
 
@@ -91,9 +91,9 @@ leave maintenance on us</p>
     </ion-row>
 
     <ion-row>
-      <ion-col style="text-align: end;">
+      <ion-col class="searchCol">
 
-        <ion-button style="--background: #e1281c;text-transform: none;" (click)="search()"> Search </ion-button>
+        <ion-button (click)="search()"> Search </ion-button>
 
       </ion-col>
     </ion-row>
@@ -106,16 +106,16 @@ leave maintenance on us</p>
   
 
 
-  <ion-grid *ngIf="segmentValue=='Lease a car'" style="background: #e8e8e8;width: 92%;margin-top: -5px;border-bottom-left-radius: 10px;border-bottom-left-radius: 10px;height: 80%;">
+  <ion-grid *ngIf="segmentValue=='Lease a car'" class="leaseGrid">
     <ion-row>
-      <ion-col size="12" style="border-bottom: 1px solid lightgray;">
-<p style="size: 8px;text-align: center;margin-top: -8px;">Lease a car starting from 3 Months to Years and 
+      <ion-col size="12" class="leaseCol">
+<p>Lease a car starting from 3 Months to Years and 
 bring in significant cost saving & reduced administrative hassles</p>
       </ion-col>
     </ion-row>
    
     <ion-row>
-      <ion-col style="text-align: center;" size="4">
+      <ion-col class="leaseDate" size="4">
 <p>Start Date</p>
       </ion-col>
 
@@ -128,12 +128,12 @@ bring in significant cost saving & reduced administrative hassles</p>
     </ion-row>
 
     <ion-row>
-      <ion-col style="text-align: center;" size="4">
+      <ion-col class="leaseDate" size="4">
 <p>Duration in Months</p>
       </ion-col>
 
       <ion-col size="8">
-        <ion-item style="--background: #e8e8e8;" lines="none">
+        <ion-item class="rangeItem" lines="none">
           <ion-range min="1" max="12" pin="true" snaps="true" color="dark" (ionChange)="rangeAction($event)">
 
             <ion-label slot="start">1</ion-label>
@@ -145,9 +145,9 @@ bring in significant cost saving & reduced administrative hassles</p>
     </ion-row>
 
     <ion-row>
-      <ion-col style="text-align: end;">
+      <ion-col class="enquireCol">
 
-        <ion-button style="--background: #e1281c;text-transform: none;"> Enquire Now </ion-button>
+        <ion-button> Enquire Now </ion-button>
 
       </ion-col>
     </ion-row>
