@@ -1,12 +1,16 @@
 import { Injectable } from '@angular/core';
-import { AlertController } from '@ionic/angular';
+import { AlertController, ToastController } from '@ionic/angular';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ServiceService {
 
-  constructor(private alertCtrl:AlertController) { }
+
+  toast:any;
+
+  constructor(private alertCtrl:AlertController,
+    private toastCtrl:ToastController) { }
 
 
   async presentConfirm() {
@@ -33,5 +37,21 @@ export class ServiceService {
     });
     await alert.present();
   }
+
+
+  async toastMessage() {
+  
+  
+    this.toast = this.toastCtrl.create({
+     message: 'Press back again to exit',
+     duration: 2000,
+     position:'bottom'
+   }).then((toastData)=>{
+     console.log(toastData);
+     toastData.present();
+   });
+ 
+ 
+ }
 
 }

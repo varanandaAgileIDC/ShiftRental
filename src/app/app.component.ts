@@ -24,7 +24,7 @@ export class AppComponent {
       this.splashScreen.hide();
 
       this.statusBar.styleLightContent();
-      this.statusBar.backgroundColorByHexString('#8b8b7c');
+      this.statusBar.backgroundColorByHexString('#81070f');
     });
   }
 }

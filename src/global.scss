@@ -29,7 +29,7 @@
 ion-toolbar
 {
 
-    --background:#a5a58d;//#264653; //rgb(53, 52, 52);
+    --background:#a30e17;//#264653; //rgb(53, 52, 52);
     color: white;
     font-weight: bold;
 
@@ -43,4 +43,10 @@ ion-toolbar
     font-size: 12px;
     color:red;
 
+}
+.detail
+{
+
+    font-size: 10px;
+    font-family: 'Times New Roman', Times, serif;
 }

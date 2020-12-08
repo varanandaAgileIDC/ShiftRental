@@ -70,6 +70,8 @@ export class DashboardPage implements OnInit {
     
           debugger;
           this.status = true;
+
+          this.api.toastMessage();
     
         }
 

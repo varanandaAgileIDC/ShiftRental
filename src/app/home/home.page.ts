@@ -49,6 +49,8 @@ export class HomePage {
     
           debugger;
           this.status = true;
+
+          this.api.toastMessage();
     
         }
 

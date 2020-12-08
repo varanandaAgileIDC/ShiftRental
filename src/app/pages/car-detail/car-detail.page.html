@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-back-button href="cars"></ion-back-button>
+    </ion-buttons>
+   
+    <ion-title>{{carDetails.name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+  <ion-card no-padding>
+    <ion-card-header style="margin-top: -40px;">
+      <img [src]="carDetails.image" style="width: 100%;height: 40%;object-fit:fill;"> 
+    </ion-card-header>
+  
+    <ion-card-content style="margin-top: -50px;">
+     
+      <ion-grid>
+        <ion-row>
+
+          <ion-col size="7">
+            <p class="detail"> Minimum age {{carDetails.age}} Years </p>
+            <p class="detail"><ion-icon name="car"></ion-icon> {{carDetails.fuelType}} </p>
+            <p class="detail"><ion-icon name="person"></ion-icon> Sitting Capacity : {{carDetails.capacity}} </p>
+            <p class="detail"> <ion-icon name="briefcase"></ion-icon> Heavy Luggage : {{carDetails.heavyLug}} </p>
+            <p class="detail"> <ion-icon name="briefcase"></ion-icon> Light Luggage : {{carDetails.lightLug}} </p>
+            <p class="detail"><ion-icon name="eyedrop"></ion-icon> {{carDetails.transmission}} </p>
+
+          </ion-col>
+
+          <ion-col>
+            <div style="background: rgb(253, 249, 249);border: 1px solid lightgray;">
+                <b style="margin-left: 5px;"> Daily </b><br>
+              <b style="margin-left: 5px;"> <span style="font-size: 10px;color: black;"><span style="text-decoration-line: line-through;color: gray;"> AED 125</span> &nbsp;&nbsp; AED {{carDetails.daily}} </span> </b>
+            </div>
+            <div style="background: rgb(253, 249, 249);border: 1px solid lightgray;margin-top: 4px;">
+              <b style="margin-left: 5px;"> Weekly </b><br>
+              <b style="margin-left: 5px;"> <span style="font-size: 10px;color: black;"><span style="text-decoration-line: line-through;color: gray;"> AED 125</span> &nbsp;&nbsp; AED {{carDetails.weekly}} </span> </b>
+            </div>
+            <div style="background: rgb(253, 249, 249);border: 1px solid lightgray;margin-top: 4px;">
+              <b style="margin-left: 5px;"> Monthly </b><br>
+              <b style="margin-left: 5px;"> <span style="font-size: 10px;color: black;"><span style="text-decoration-line: line-through;color: gray;"> AED 125</span> &nbsp;&nbsp; AED {{carDetails.monthly}} </span> </b>
+            </div>
+           
+            
+          </ion-col>
+
+        </ion-row>
+        <div style="text-align: end;">
+          <ion-button  slot="end" style="font-size: 12px;text-transform: none;--background:#d7151b;">Select another Car</ion-button>
+        </div>
+      </ion-grid>
+      
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

@@ -21,8 +21,8 @@
 <ion-list>
 
   <ion-card *ngFor="let car of carsArray">
-    <ion-item lines="none" detail>
-      <img [src]="car.image" style="width: 140px;height: 140px;"><br>
+    <ion-item lines="none" detail (click)="detail(car)">
+      <img [src]="car.image" style="width: 140px;height: 140px;object-fit: fill;"><br>
       <ion-label>
        <b><p style="background: #d7151b;color: white;text-align: center;border-radius: 5px;"> {{car.name}} </p></b> 
         <p class="detail"> Minimum age {{car.age}} Years </p>

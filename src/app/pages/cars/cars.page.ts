@@ -111,5 +111,14 @@ export class CarsPage implements OnInit {
 
   }
 
+  detail(car)
+  {
+
+    debugger;
+
+    this.router.navigate(['car-detail',JSON.stringify(car)]);
+
+  }
+
 
 }
