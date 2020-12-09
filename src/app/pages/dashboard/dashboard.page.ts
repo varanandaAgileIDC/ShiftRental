@@ -12,6 +12,7 @@ export class DashboardPage implements OnInit {
 
 
   slideItems = [];
+  apiData = [];
 
   segmentValue = 'Rent a Car';
   durationValue: number;
@@ -25,6 +26,19 @@ export class DashboardPage implements OnInit {
     slidesPerView: 1,
     autoplay: true
   };
+
+  slideOptsTop = {
+    spaceBetween: 0,
+    slidesPerView: 1.15,
+  };
+
+  slideOpts: {
+    spaceBetween: 0,
+    slidesPerView: 1.15,  
+    initialSlide: 0,
+    autoplay: true
+  };
+
 
   constructor(private platform:Platform,
     private router:Router,private apiService:ServiceService) {
@@ -60,6 +74,8 @@ export class DashboardPage implements OnInit {
   }
 
   ionViewDidEnter(){
+
+    this.observableData();
    
 
     this.platform.backButton.subscribeWithPriority(10, () => {
@@ -86,6 +102,32 @@ export class DashboardPage implements OnInit {
 
     }
   });
+
+  }
+
+
+
+  slidesDidLoad(slides) {
+    slides.startAutoplay();
+  }
+
+
+  observableData()
+  {
+
+
+    this.apiService.getItem(1).subscribe((response) => {
+      
+      debugger;
+  
+      console.log(response);
+
+      this.apiData = this.apiData.concat(response['results']);
+
+  
+      });
+  
+
 
   }
 

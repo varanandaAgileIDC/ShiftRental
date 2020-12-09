@@ -1,4 +1,90 @@
 <ion-content>
 
- 
+  <ion-list style="background: transparent;">
+<img src="/assets/icon.png" class="logo">
+
+<ion-slides [options]="slideOpts" pager="true" autoplay="5000" loop="true" speed="300" #mySlider #changeSlider (ionSlidesDidLoad)="slidesDidLoad(mySlider)">
+  <ion-slide *ngFor="let slide of slideItems">
+    <ion-card class="ion-text-start" style="height: 120px;width: 90%;">
+      <img [src]="slide.image" style="height: 120px;width: 100%;">
+    </ion-card>
+  </ion-slide>
+</ion-slides>
+
+<div style="text-align: center;color: white;font-weight: bold;font-family: 'Times New Roman', Times, serif;">
+  <h1>Rentals</h1>
+</div>
+
+<div style="text-align: center;color: white;font-weight: bold;font-family: 'Times New Roman', Times, serif;">
+  <h2>Let's find a car for you</h2>
+</div>
+
+<ion-card style="text-align: center;width: 70%;margin-left: 15%;">
+  
+  <ion-item lines="none" style="text-align: center;">
+    <ion-icon name="locate" slot="start"></ion-icon>
+    <ion-label>Select city & date</ion-label>
+    <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
+  </ion-item>
+
+</ion-card>
+
+<h4 class="ion-padding-horizontal ion-padding-top color">Car Subscriptions</h4>
+
+<ion-slides [options]="slideOptsTop">
+  <ion-slide>
+    <ion-card class="ion-text-start" [routerLink]="['/tabs/lease']">
+      <img src="https://placem.at/people?overlay_color=eb7a85&w=600&h=290">
+      <ion-card-header>
+        <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+        <ion-card-title>Card Title</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+  </ion-slide>
+  <ion-slide>
+    <ion-card class="ion-text-start" [routerLink]="['/tabs/lease']">
+      <img src="https://placem.at/places?overlay_color=3afbec&w=600&h=290">
+      <ion-card-header>
+        <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+        <ion-card-title>Card Title</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+  </ion-slide>
+  <ion-slide>
+    <ion-card class="ion-text-start" [routerLink]="['/tabs/lease']">
+      <img src="https://placem.at/things?overlay_color=bf27f9&w=600&h=290">
+      <ion-card-header>
+        <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+        <ion-card-title>Card Title</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+  </ion-slide>
+</ion-slides>
+
+
+<h4 class="ion-padding-horizontal ion-padding-top color">Offers</h4>
+
+<ion-slides [options]="slideOptsTop">
+  <ion-slide>
+    <ion-card style="height: 120px;width: 100%;">
+      <!-- <ion-item style="--padding-start: 0px;"> -->
+      
+      <img src="https://placem.at/people?overlay_color=eb7a85&w=600&h=290" style="height: 120px;width: 100%;">
+  
+    <!-- </ion-item> -->
+    </ion-card>
+  </ion-slide>
+  <ion-slide>
+    <ion-card class="ion-text-start" style="height: 120px;width: 100%;">
+      <img src="https://placem.at/places?overlay_color=3afbec&w=600&h=290" style="height: 120px;width: 100%;">
+    </ion-card>
+  </ion-slide>
+  <ion-slide>
+    <ion-card class="ion-text-start" style="height: 120px;width: 100%;">
+      <img src="https://placem.at/things?overlay_color=bf27f9&w=600&h=290" style="height: 120px;width: 100%;">
+    </ion-card>
+  </ion-slide>
+</ion-slides>
+
+</ion-list>
 </ion-content>
