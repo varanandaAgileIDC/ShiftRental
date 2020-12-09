@@ -39,10 +39,39 @@ export class DashboardPage implements OnInit {
     autoplay: true
   };
 
+  faqs = [];
+
+  automaticClose = false;
+
 
   constructor(private platform:Platform,
     private router:Router,private apiService:ServiceService) {
 
+
+      this.faqs = [
+        { name: 'nhguyjsfcu',
+        children:[{
+          information: 'uhcidgscs'
+        }]
+       },
+       { name: 'nhguyjsfcu',
+       children:[{
+         information: 'gixyisgcisfdc'
+       }]
+      },
+      { name: 'nhguyjsfcu',
+      children:[{
+        information: 'fvdfvdfv'
+      }]
+     },
+     { name: 'nhguyjsfcu',
+     children:[{
+       information: 'eferferferf'
+     }]
+    }
+      ];
+
+      this.faqs[0].open = true;
 
      }
 
@@ -104,6 +133,43 @@ export class DashboardPage implements OnInit {
   });
 
   }
+
+
+  toogleSection(index)
+  {
+
+    this.faqs[index].open = !this.faqs[index].open;
+
+    if(this.automaticClose && this.faqs[index].open)
+    {
+
+      this.faqs.filter((item,itemIndex) => itemIndex !=index).map(item => item.open = false)
+
+    }
+
+  }
+
+  toggleItem(index,childIndex)
+  {
+
+    this.faqs[index].children[childIndex].open = !this.faqs[index].children[childIndex].open;
+
+  }
+
+  // expandItem(item): void {
+  //   if (item.expanded) {
+  //     item.expanded = false;
+  //   } else {
+  //     this.faqs.map(listItem => {
+  //       if (item == listItem) {
+  //         listItem.expanded = !listItem.expanded;
+  //       } else {
+  //         listItem.expanded = false;
+  //       }
+  //       return listItem;
+  //     });
+  //   }
+  // }
 
 
 
