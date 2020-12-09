@@ -41,7 +41,7 @@ ion-toolbar
     text-align: left;
     margin-left: 20px;
     font-size: 12px;
-    color:red;
+    color:#a30e17;
 
 }
 .detail
@@ -62,3 +62,11 @@ ion-content
     //bottom: 0px !important;  
    
 }
+
+ion-card{
+
+    -webkit-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
+  
+  }

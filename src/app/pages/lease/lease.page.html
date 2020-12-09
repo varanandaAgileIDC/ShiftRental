@@ -6,6 +6,8 @@
 
 <ion-content>
 
+  <ion-list style="background: transparent;">
+<!-- 
   <ion-slides *ngIf="segmentValue=='Rent a Car'" #mySlider #changeSlider (ionSlidesDidLoad)="slidesDidLoad(mySlider)"
   (ionSlideDidChange)="slideDidChange(changeSlider)" pager="true" autoplay="5000" loop="true" speed="300"
   [options]="slidesOpts" class="banner">
@@ -15,16 +17,23 @@
       <img [src]="slide.image" class="bannerImage">
     </div>
   </ion-slide>
+</ion-slides> -->
 
-
+<ion-slides *ngIf="segmentValue=='Rent a Car'" [options]="slidesOpts" pager="true" autoplay="5000" loop="true" speed="300" (ionSlideDidChange)="slideDidChange(changeSlider)" #mySlider #changeSlider (ionSlidesDidLoad)="slidesDidLoad(mySlider)">
+  <ion-slide *ngFor="let slide of slideItems" style="padding-top: 0%;">
+    <ion-card class="ion-text-start" style="height: 120px;width: 90%;padding-top: 0%;">
+      <img [src]="slide.image" style="height: 120px;width: 100%;">
+    </ion-card>
+  </ion-slide>
 </ion-slides>
+
 <ion-grid class="segmentGrid">
 
   <ion-segment value="Rent a Car" class="segment" (ionChange)="segmentChanged($event)">
-    <ion-segment-button value="Rent a Car" class="segmentBtn">
+    <ion-segment-button value="Rent a Car" class="segmentBtn" style="--indicator-color:transparent">
       <ion-label>Rent a Car</ion-label>
     </ion-segment-button>
-    <ion-segment-button value="Lease a car">
+    <ion-segment-button value="Lease a car" style="--indicator-color:transparent">
       <ion-label>Lease a car</ion-label>
     </ion-segment-button>
   </ion-segment>
@@ -153,5 +162,5 @@ bring in significant cost saving & reduced administrative hassles</p>
   </ion-row>
 </ion-grid>
 
-
+</ion-list>
 </ion-content>
