@@ -8,6 +8,7 @@ export class ServiceService {
 
 
   toast:any;
+  status = false;
 
   constructor(private alertCtrl:AlertController,
     private toastCtrl:ToastController) { }

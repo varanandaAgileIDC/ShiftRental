@@ -1,9 +1,30 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>tabs</ion-title>
-  </ion-toolbar>
-</ion-header>
 
 <ion-content>
+
+  <ion-tabs>
+
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="dashboard" layout="icon-top">
+        <ion-icon name="car-sport-outline"></ion-icon>
+        <ion-label>Rentals</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="lease" layout="icon-top">
+        <ion-icon name="car-outline"></ion-icon>
+        <ion-label>Lease</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="bookings" layout="icon-top">
+        <ion-icon name="document-text-outline"></ion-icon>
+        <ion-label>Bookings</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="more" layout="icon-top">
+        <ion-icon name="menu-outline"></ion-icon>
+        <ion-label>More</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  
+  </ion-tabs>
 
 </ion-content>

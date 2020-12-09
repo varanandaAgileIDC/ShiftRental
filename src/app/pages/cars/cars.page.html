@@ -4,8 +4,8 @@
   </ion-toolbar>
 
   <ion-grid>
-    <ion-row style="text-align: center;">
-      <ion-col style="border-right: 1px solid lightgray;">
+    <ion-row class="sortRow">
+      <ion-col class="sortCol">
         <ion-icon name="funnel-outline"></ion-icon> <span> Sort By </span>
       </ion-col>
       <ion-col>
@@ -22,9 +22,9 @@
 
   <ion-card *ngFor="let car of carsArray">
     <ion-item lines="none" detail (click)="detail(car)">
-      <img [src]="car.image" style="width: 140px;height: 140px;object-fit: fill;"><br>
+      <img [src]="car.image" class="carImage"><br>
       <ion-label>
-       <b><p style="background: #d7151b;color: white;text-align: center;border-radius: 5px;"> {{car.name}} </p></b> 
+       <b><p class="carName"> {{car.name}} </p></b> 
         <p class="detail"> Minimum age {{car.age}} Years </p>
        <p class="detail"><ion-icon name="car"></ion-icon> {{car.fuelType}} </p>
        <p class="detail"><ion-icon name="person"></ion-icon> Sitting Capacity : {{car.capacity}} </p>
@@ -36,12 +36,12 @@
     </ion-item>
 
 
-    <ion-row style="border: 1px solid lightgray;">
-      <ion-col style="border-right: 1px solid lightgray;">
+    <ion-row class="bottomRow">
+      <ion-col>
        <b> Daily </b><br>
      <b> <span style="font-size: 10px;color: black;"><span style="text-decoration-line: line-through;color: gray;"> AED 125</span> &nbsp;&nbsp; AED {{car.daily}} </span> </b>
       </ion-col>
-      <ion-col style="border-right: 1px solid lightgray;">
+      <ion-col>
         <b> Weekly </b><br>
         <b><span style="font-size: 10px;color: black;"><span style="text-decoration-line: line-through;color: gray;"> AED 125</span> &nbsp;&nbsp; AED {{car.weekly}} </span> </b>
      </ion-col>

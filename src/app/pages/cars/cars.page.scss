@@ -5,3 +5,37 @@ ion-card
     box-shadow: 0px 0px 10px 1px rgba(124, 123, 123, 0.75);
     border-radius: 10px;
 }
+sortRow
+{
+
+    text-align: center;
+
+}
+.sortCol
+{
+
+    border-right: 1px solid lightgray;
+
+}
+.carImage
+{
+
+    width: 140px;height: 140px;object-fit: fill;
+
+}
+.carName
+{
+
+    background: #d7151b;color: white;text-align: center;border-radius: 5px;
+
+}
+.bottomRow
+{
+
+    border: 1px solid lightgray;
+
+    ion-col{
+        border-right: 1px solid lightgray;
+    }
+
+}

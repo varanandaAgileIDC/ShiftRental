@@ -1,0 +1,135 @@
+.banner
+
+ {
+
+  margin-top: 0px;
+   width: 100% !important;
+   //max-height: 200px;
+
+ }
+
+ .bannerDiv
+
+ {
+
+ width: 100%;
+ height: 200px;
+
+ }
+.bannerImage
+
+{
+ width: 100%;
+ height: 200px;
+
+}
+
+.segmentGrid
+{
+
+  width: 95%;
+
+}
+
+.segment
+{
+
+  border: 2px solid #f4c800;color: #f4c800;
+
+}
+.segmentBtn
+{
+
+  border-right: 1px solid gray;
+
+}
+.rentGrid
+{
+
+  background: #e8e8e8;width: 92%;margin-top: -5px;
+  border-bottom-left-radius: 10px;border-bottom-right-radius: 10px;
+  bottom: -50px;
+
+}
+.rentCol
+{
+
+  border-bottom: 1px solid lightgray;
+
+  p{
+    size: 8px;text-align: center;margin-top: -8px;
+  }
+
+}
+
+.radioItem
+{
+  --background: #e8e8e8;text-align: end;
+
+  ion-label
+  {
+    font-size: 12px;
+  }
+}
+
+.dateCol
+{
+
+  text-align: center;
+
+}
+
+.searchCol
+{
+
+    text-align: end;
+
+    ion-button
+    {
+
+      --background: #e1281c;text-transform: none;
+
+    }
+
+}
+.leaseGrid{
+
+  background: #e8e8e8;width: 92%;margin-top: -5px;border-bottom-left-radius: 10px;border-bottom-left-radius: 10px;height: 80%;
+
+}
+.leaseCol
+{
+
+  border-bottom: 1px solid lightgray;
+
+  p {
+
+    size: 8px;text-align: center;margin-top: -8px;
+
+  }
+
+}
+.leaseDate
+{
+
+  text-align: center;
+
+}
+.rangeItem
+{
+
+  --background: #e8e8e8;
+
+}
+.enquireCol
+{
+
+  text-align: end;
+
+  ion-button{
+
+    --background: #e1281c;text-transform: none;
+
+  }
+
+}

@@ -19,10 +19,10 @@ const routes: Routes = [
     path: 'password',
     loadChildren: () => import('./pages/password/password.module').then( m => m.PasswordPageModule)
   },
-  {
-    path: 'dashboard',
-    loadChildren: () => import('./pages/dashboard/dashboard.module').then( m => m.DashboardPageModule)
-  },
+  // {
+  //   path: 'dashboard',
+  //   loadChildren: () => import('./pages/dashboard/dashboard.module').then( m => m.DashboardPageModule)
+  // },
   {
     path: 'cars',
     loadChildren: () => import('./pages/cars/cars.module').then( m => m.CarsPageModule)
@@ -35,6 +35,18 @@ const routes: Routes = [
     path: 'tabs',
     loadChildren: () => import('./pages/tabs/tabs.module').then( m => m.TabsPageModule)
   },
+  // {
+  //   path: 'lease',
+  //   loadChildren: () => import('./pages/lease/lease.module').then( m => m.LeasePageModule)
+  // },
+  // {
+  //   path: 'bookings',
+  //   loadChildren: () => import('./pages/bookings/bookings.module').then( m => m.BookingsPageModule)
+  // },
+  // {
+  //   path: 'more',
+  //   loadChildren: () => import('./pages/more/more.module').then( m => m.MorePageModule)
+  // },
 ];
 
 @NgModule({

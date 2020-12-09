@@ -95,7 +95,7 @@ export class PasswordPage implements OnInit {
   register(formData)
   {
 
-    this.router.navigate(['dashboard']);
+    this.router.navigate(['/tabs/dashboard']);
 
   }
 

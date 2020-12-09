@@ -83,7 +83,7 @@ export class HomePage {
   {
 
     this.status = false;
-    this.router.navigate(['dashboard']);
+    this.router.navigate(['/tabs/dashboard']);
 
   }
 
