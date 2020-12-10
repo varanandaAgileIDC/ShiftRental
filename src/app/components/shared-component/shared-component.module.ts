@@ -6,11 +6,11 @@ import { IonicModule } from '@ionic/angular';
 
 
 @NgModule({
-  declarations: [AccordionListComponent],
+  declarations: [],
   imports: [
     CommonModule,
     IonicModule
   ],
-  exports: [AccordionListComponent]
+  //exports: [AccordionListComponent]
 })
 export class SharedComponentModule { }
